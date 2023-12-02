@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { links } from '@/data/links-data';
 import { FaBug } from 'react-icons/fa';
+import classNames from 'classnames';
 
 const NavBar = () => {
   const pathname = usePathname();
@@ -17,9 +18,11 @@ const NavBar = () => {
         {links.map((link, i) => (
           <li>
             <Link
-              className={`text-zinc-400 hover:text-zinc-600 transition-colors ${
-                pathname === link.href ? 'text-zinc-600' : ''
-              }`}
+              className={classNames({
+                'text-zinc-900': link.href === pathname,
+                'text-zinc-400': link.href !== pathname,
+                'hover:text-zinc-600 transition-colors': true,
+              })}
               href={link.href}
               key={i}
             >
