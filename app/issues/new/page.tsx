@@ -10,7 +10,7 @@ const NewIsuuePage = () => {
         <TextField.Input placeholder="Search issue..." className="w-[20]" />
       </TextField.Root>
       <TextArea placeholder="Description" />
-      <Button color="cyan">Submit New Issue</Button>
+      <Button>Create New Issue</Button>
     </div>
   );
 };
